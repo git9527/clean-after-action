@@ -1,3 +1,5 @@
+## This action is forked from: https://github.com/mickem/clean-after-action
+
 # Cleanup after build
 
 Cleanup the work directory for self hosted runners after they finish building.
@@ -5,7 +7,7 @@ Cleanup the work directory for self hosted runners after they finish building.
 ## Example usage
 
 ```yaml
-- uses: mickem/clean-after-action@v1
+- uses: git9527/clean-up-action@v1
 ```
 
 It is important that this is run before any caching tasks as cleanups are run in reverse order (and you do not want to cleanup before the caching is saved).
@@ -16,7 +18,7 @@ jobs:
   build:
     runs-on: onprem
     steps:
-    - uses: mickem/clean-after-action@v1
+    - uses: git9527/clean-up-action@v1
     - uses: actions/checkout@v2
     - uses: actions/cache@v2
     # ....
@@ -28,7 +30,7 @@ jobs:
 Set this to true to prevent the `.git ` folder to be deleted.
 
 ```yaml
-- uses: mickem/clean-after-action@v1
+- uses: git9527/clean-up-action@v1
   with:
     keepGit: true
 ```

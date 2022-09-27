@@ -3,7 +3,7 @@ const io = require('@actions/io');
 const fs = require('fs');
 
 function getBoolValue(name) {
-  return ['false', '0', '', 'no', 'n'].includes(core.getInput(name).trim().toLowerCase())
+  return !['false', '0', '', 'no', 'n'].includes(core.getInput(name).trim().toLowerCase())
 }
 
 async function main() {
