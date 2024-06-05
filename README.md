@@ -7,7 +7,7 @@ Cleanup the work directory for self hosted runners after they finish building.
 ## Example usage
 
 ```yaml
-- uses: git9527/clean-up-action@v1
+- uses: git9527/clean-up-action@v2
 ```
 
 It is important that this is run before any caching tasks as cleanups are run in reverse order (and you do not want to cleanup before the caching is saved).
@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: onprem
     steps:
-    - uses: git9527/clean-up-action@v1
+    - uses: git9527/clean-up-action@v2
     - uses: actions/checkout@v2
     - uses: actions/cache@v2
     # ....
@@ -30,7 +30,7 @@ jobs:
 Set this to true to prevent the `.git ` folder to be deleted.
 
 ```yaml
-- uses: git9527/clean-up-action@v1
+- uses: git9527/clean-up-action@v2
   with:
     keepGit: true
 ```
