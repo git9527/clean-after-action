@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install
-        run: npm ci
+        run: npm install
 
   release:
     name: Release
